@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   get 'product/:permalink' => 'products#show', :as => 'product'
   root :to => 'products#index'
+
+  get 'basket' => 'orders#show', :as => 'basket'
+  delete 'basket' => 'orders#destroy', :as => 'empty_basket'
+  post 'basket/:order_item_id' => 'orders#change_item_quantity', :as => 'adjust_basket_item_quantity'
+  delete 'basket/:order_item_id' => 'orders#change_item_quantity'
+  delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
