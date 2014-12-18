@@ -1,4 +1,4 @@
-orrequire 'test_helper'
+require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   # test "the truth" do

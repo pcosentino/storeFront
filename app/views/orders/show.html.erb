@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 <h2>Your basket</h2>
 <%= render 'items', :order => current_order %>
-
->>>>>>> d6aac97474e9a29fa846dd6d467eeb08546ccca9
+<p><%= link_to "Back to list", root_path %></p>
 <p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>

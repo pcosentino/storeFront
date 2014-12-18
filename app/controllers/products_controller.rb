@@ -10,17 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def buy
-<<<<<<< HEAD
     @product = Shoppe::Product.find_by_permalink!(params[:permalink])
     current_order.order_items.add_item(@product, 1)
     redirect_to product_path(@product.permalink), :notice => "Product has been added successfuly!"
   end
 end
-=======
-  	@product = Shoppe::Product.find_by_permalink!(params[:permalink])
-  	current_order.order_items.add_item(@product, 1)
-  	redirect_to product_path(@product.permalink), :notice => "Product has been added successfuly!"
-	end
-
-end
->>>>>>> d6aac97474e9a29fa846dd6d467eeb08546ccca9
