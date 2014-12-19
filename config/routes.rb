@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'basket' => 'orders#show'
   delete 'basket' => 'orders#destroy'
   
-
+  match 'checkout' => 'orders#checkout', :as => 'checkout', :via => [:get, :patch]
+  match 'checkout/pay' => 'orders#payment', :as => 'checkout_payment', :via => [:get, :post]
+  match 'checkout/confirm' => 'orders#confirmation', :as => 'checkout_confirmation', :via =>[:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
