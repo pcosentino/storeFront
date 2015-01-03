@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20141212013350) do
     t.string   "role"
     t.string   "file_name"
     t.string   "file_type"
-    t.binary   "data",        limit: 10485760
+    t.binary   "data",        limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
   end
