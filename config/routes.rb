@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
 
+  root :to => 'products#index'
+
   get 'product/:permalink' => 'products#show', :as => 'product'
   post 'product/:permalink' => 'products#buy', :as => 'buy_product'
-
-  root :to => 'products#index'
 
   get 'basket' => 'orders#show'
   delete 'basket' => 'orders#destroy'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   match 'checkout/confirm' => 'orders#confirmation', :as => 'checkout_confirmation', :via =>[:get, :post]
 
   get 'categories' => 'categories#index'
+  get 'category/:permalink' => 'categories#show', :as => 'category'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
