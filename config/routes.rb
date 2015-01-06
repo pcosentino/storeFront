@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount Shoppe::Engine => "/shoppe"
 
   root :to => 'products#index'
